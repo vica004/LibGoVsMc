@@ -5,6 +5,10 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace LibGo.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -23,6 +27,7 @@ namespace LibGo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            MobileCenter.Configure("53f1b25d-6539-4262-9bac-fbc513752831");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

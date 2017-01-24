@@ -5,6 +5,10 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace LibGo
 {
     public partial class App : Application
@@ -12,6 +16,8 @@ namespace LibGo
         public App()
         {
             InitializeComponent();
+
+            MobileCenter.Start(typeof(Analytics), typeof(Crashes));
 
             MainPage = new LibGo.MainPage();
         }
